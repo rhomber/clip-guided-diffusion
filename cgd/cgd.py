@@ -18,7 +18,7 @@ sys.path.append(os.path.join(os.getcwd(), "guided-diffusion"))
 
 TIMESTEP_RESPACINGS = ("25", "50", "100", "250", "500", "1000", "ddim25", "ddim50", "ddim100", "ddim250", "ddim500", "ddim1000")
 DIFFUSION_SCHEDULES = (25, 50, 100, 250, 500, 1000)
-IMAGE_SIZES = (64, 128, 256, 512)
+IMAGE_SIZES = (64, 128, 256, 512, 1150)
 CLIP_MODEL_NAMES = ("ViT-B/16", "ViT-B/32", "RN50", "RN101", "RN50x4", "RN50x16")
 CLIP_NORMALIZE = tvt.Normalize(mean=[0.48145466, 0.4578275, 0.40821073], std=[0.26862954, 0.26130258, 0.27577711])
 
@@ -262,7 +262,7 @@ def main():
     p.add_argument("--min_weight", "-min_wt", type=float,
                    default=0.1, help="the prompt to penalize")
     p.add_argument("--image_size", "-size", type=int, default=128,
-                   help="Diffusion image size. Must be one of [64, 128, 256, 512].")
+                   help="Diffusion image size. Must be one of [64, 128, 256, 512, 1150].")
     p.add_argument("--init_image", "-init", type=str, default='',
                    help="Blend an image with diffusion for n steps")
     p.add_argument("--skip_timesteps", "-skip", type=int, default=0,
